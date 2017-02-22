@@ -11,10 +11,10 @@
         }
     ],
     "require": {
-        "laravel/laravel": "5.4.*",
         "intercom/intercom-php": "^3.1"
     },
     "require-dev": {
+        "laravel/laravel": "~5.4",
         "mockery/mockery": "0.9.*",
         "phpunit/phpunit": "~5.7"
     },

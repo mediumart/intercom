@@ -1,10 +1,10 @@
-# Mediumart/Intercom
+# Mediumart Intercom
 
 [![Build Status](https://travis-ci.org/mediumart/intercom.svg?branch=master)](https://travis-ci.org/mediumart/intercom)
 
 ## Description
 
-An Intercom API client adapter for laravel
+An Intercom API client adapter for laravel 5.4
 
 ## License
 
