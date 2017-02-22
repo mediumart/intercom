@@ -22,6 +22,7 @@ class IntercomClientTest extends TestCase
           ['segments'],
           ['counts'],
           ['bulk'],
+          ['notes'],
         ];
     }
 

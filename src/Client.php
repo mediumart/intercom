@@ -33,6 +33,8 @@ class Client
      */
     public function __get($property)
     {
+        if($property == 'notes') return $this->intercomClient->{$property};
+        
         if( property_exists($this->intercomClient, $property) &&
             (new \ReflectionProperty(
                 get_class($this->intercomClient), $property
