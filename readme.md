@@ -1,6 +1,8 @@
 # Mediumart Intercom
 
 [![Build Status](https://travis-ci.org/mediumart/intercom.svg?branch=master)](https://travis-ci.org/mediumart/intercom)
+[![Latest Stable Version](https://poser.pugx.org/mediumart/intercom/v/stable)](https://packagist.org/packages/mediumart/intercom)
+[![License](https://poser.pugx.org/mediumart/intercom/license)](https://packagist.org/packages/mediumart/intercom)
 
 ## Installation
 
