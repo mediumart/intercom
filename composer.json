@@ -1,0 +1,31 @@
+{
+    "name": "mediumart/intercom",
+    "description": "Intercom API client adapter for laravel",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "intercom", "intercom.io"],
+    "authors": [
+        {
+            "name": "Isaac Esso",
+            "email": "daprod2009@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/laravel": "5.4.*",
+        "intercom/intercom-php": "^3.1"
+    },
+    "require-dev": {
+        "mockery/mockery": "0.9.*",
+        "phpunit/phpunit": "~5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mediumart\\Intercom\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    }
+}
