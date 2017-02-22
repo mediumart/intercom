@@ -33,8 +33,69 @@ Once you got your access token, open the `config/services.php` in your laravel p
     ]
 
 
-The package will automatically pick out the token to authenticate any Api call to your own intercom data.
+The package will automatically pick out the token to authenticate any api request to your own intercom data.
 
+## Usage
+
+You can resolve the intercom `Client` in many ways:
+
+```php
+use Mediumart\Intercom\Client;
+
+/** 
+* Manually resolving from the container 
+* */
+$intercom = app('intercom');
+// or
+$intercom = app(Client::class);
+
+
+/** 
+* using type hinting and laravel's automatic resolution
+* */
+public function index(Client $intercom) 
+{
+    /.../
+}
+
+
+/**
+* Simply leverage the facade
+* */
+$intercomUsers = Intercom::users();
+```
+
+Using the `intance` or the `facade`, any resource type is mirrored as a method on the `Client`, that can be used to gain the corresponding resource object :
+```php
+// facade
+$leads = Intercom::leads();
+
+// instance
+$intercom = app('intercom');
+$conversations = $intercom->conversations();
+```
+Using the `intance` approach you can also resolve the resource instance as a property of the `Client`:
+```php
+$conversations = $intercom->conversations;
+```
+
+Here is the list of all the Intercom resources types :
+
+ - `users`
+ - `events`
+ - `companies`
+ - `messages`
+ - `conversations`
+ - `leads`
+ - `admins`
+ - `tags`
+ - `segments`
+ - `counts`
+ - `bulk`
+ - `notes`
+ 
+You can find related informations on their [official documentation page](https://developers.intercom.com/v2.0/reference#introduction).
+ 
 ## License
 
 Mediumart Intercom is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
