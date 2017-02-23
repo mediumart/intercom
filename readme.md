@@ -96,7 +96,7 @@ Here is the list of all the Intercom resources types :
  - `bulk`
  - `notes`
  
-You can find related informations on their [official documentation page](https://developers.intercom.com/v2.0/reference#introduction).
+You can find related informations on their [official documentation page](https://developers.intercom.com/v2.0/reference#api-summary).
  
 ## License
 
