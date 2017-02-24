@@ -31,7 +31,7 @@ You need to create an `app` with an associated `access_token` from your [interco
 Once you got your access token, open the `config/services.php` in your laravel project and add a key for the `intercom` service like this:
 
     'intercom' => [
-        'token' => '<your_access_token>'
+        'access_token' => '<your_access_token>'
     ]
 
 
@@ -100,4 +100,4 @@ You can find related informations on their [official documentation page](https:/
  
 ## License
 
-Mediumart Intercom is an open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+Mediumart Intercom is an open-sourced software licensed under the [MIT license](https://github.com/mediumart/intercom/blob/master/LICENSE.txt).

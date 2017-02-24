@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use Intercom\IntercomClient;
+use Mediumart\Intercom\IntercomClient;
 use Mediumart\Intercom\Client;
 use Tests\TestCase;
 
@@ -36,6 +36,8 @@ class IntercomClientTest extends TestCase
             ['get',         ['endpoint', []]    ],
             ['nextPage',    ['endpoint']        ],
             ['getAuth'],
+            ['getToken'],
+            ['setToken',    ['token']           ],   
         ];
     }
 
@@ -46,6 +48,7 @@ class IntercomClientTest extends TestCase
         $intercom2 = $this->app->make(Client::class);
 
         $this->assertInstanceOf(Client::class, $intercom);
+        $this->assertInstanceOf(Client::class, $intercom2);
         $this->assertSame($intercom, $intercom2);
     }
 

@@ -2,14 +2,12 @@
 
 namespace Mediumart\Intercom;
 
-use Intercom\IntercomClient;
-
 class Client
 {
     /**
      * Api client.
      * 
-     * @var \Intercom\IntercomClient;
+     * @var \Mediumart\Intercom\IntercomClient;
      */
     protected $intercomClient;
 
@@ -32,9 +30,7 @@ class Client
      * @throws \Exception
      */
     public function __get($property)
-    {
-        if($property == 'notes') return $this->intercomClient->{$property};
-        
+    {        
         if( property_exists($this->intercomClient, $property) &&
             (new \ReflectionProperty(
                 get_class($this->intercomClient), $property

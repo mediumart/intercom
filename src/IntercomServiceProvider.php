@@ -2,7 +2,6 @@
 
 namespace Mediumart\Intercom;
 
-use Intercom\IntercomClient;
 use Illuminate\Support\ServiceProvider;
 
 class IntercomServiceProvider extends ServiceProvider
@@ -23,7 +22,7 @@ class IntercomServiceProvider extends ServiceProvider
     {
         $this->app->singleton('intercom', function ($app) {
             return new Client( 
-                new IntercomClient( config('services.intercom.token'), null ) 
+                new IntercomClient( config('services.intercom.access_token'), null ) 
             );
         });
 
