@@ -97,6 +97,11 @@ Here is the list of all the Intercom resources types :
  - `notes`
  
 You can find related informations on their [official documentation page](https://developers.intercom.com/v2.0/reference#api-summary).
+
+In addition, you can also set the token in a fluent way, after the `Client` has been resolved, using the `setToken` method:
+
+    $intercom->setToken($token)->users->getUser($id);
+
  
 ## License
 
