@@ -9,7 +9,7 @@ class IntercomClient extends BaseClient
     /**
      * Notes.
      * 
-     * @var Intercom\IntercomNotes
+     * @var \Intercom\IntercomNotes
      */
     public $notes;
 
@@ -31,7 +31,5 @@ class IntercomClient extends BaseClient
     public function setToken($token)
     {
         $this->usernamePart = $token;
-
-        return $this;
     }
 }

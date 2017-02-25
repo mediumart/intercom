@@ -63,4 +63,31 @@ class Client
 
         return self::__get($method);
     }
+
+
+    /**
+     * Sets GuzzleHttp client.
+     *
+     * @param $client
+     * @return $this
+     */
+    public function setClient($client)
+    {
+        $this->intercomClient->setClient($client);
+
+        return $this;
+    }
+
+    /**
+     * Set the client access token.
+     *
+     * @param string $token
+     * @return $this
+     */
+    public function setToken($token)
+    {
+        $this->intercomClient->setToken($token);
+
+        return $this;
+    }
 }
