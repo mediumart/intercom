@@ -73,7 +73,9 @@ class Client
      */
     public function setClient($client)
     {
-        $this->intercomClient->setClient($client); return $this;
+        $this->intercomClient->setClient($client);
+
+        return $this;
     }
 
     /**

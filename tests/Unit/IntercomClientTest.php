@@ -37,7 +37,7 @@ class IntercomClientTest extends TestCase
             ['nextPage',    ['endpoint']        ],
             ['getAuth'],
             ['getToken'],
-            ['setToken',    ['token']           ],   
+            ['setToken',    ['token']           ],
         ];
     }
 
@@ -91,10 +91,14 @@ class IntercomClientTest extends TestCase
                     ->disableOriginalConstructor()
                     ->getMock();
 
-        $api->method($method)->willReturn('true');
+        $returnValue = in_array($method, ['setClient', 'setToken']) ? Client::class : 'true';
+
+        $api->method($method)->willReturn($returnValue);
 
         $intercom = new Client($api);
 
-        $this->assertEquals('true', call_user_func_array([$intercom, $method], $parameters) );
+        (in_array($method, ['setClient', 'setToken']))
+            ? $this->assertInstanceOf($returnValue, call_user_func_array([$intercom, $method], $parameters))
+            : $this->assertEquals($returnValue, call_user_func_array([$intercom, $method], $parameters) );
     }
 }
