@@ -2,9 +2,21 @@
 
 namespace Tests;
 
-use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
-abstract class TestCase extends BaseTestCase
+abstract class TestCase extends OrchestraTestCase
 {
-    use CreatesApplication;
+    protected function getPackageProviders($app)
+    {
+        return [
+            \Mediumart\Intercom\IntercomServiceProvider::class,
+        ];
+    }
+
+    protected function getPackageAliases($app)
+    {
+        return [
+            'Intercom' => \Mediumart\Intercom\Intercom::class,
+        ];
+    }
 }
