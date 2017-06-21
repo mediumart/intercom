@@ -27,5 +27,15 @@
         "psr-4": {
             "Tests\\": "tests/"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mediumart\\Intercom\\IntercomServiceProvider"
+            ],
+            "aliases": {
+                "Intercom": "Mediumart\\Intercom\\Intercom"
+            }
+        }
     }
 }
