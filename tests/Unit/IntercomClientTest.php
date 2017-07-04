@@ -102,4 +102,32 @@ class IntercomClientTest extends TestCase
             ? $this->assertInstanceOf($returnValue, call_user_func_array([$intercom, $method], $parameters))
             : $this->assertEquals($returnValue, call_user_func_array([$intercom, $method], $parameters) );
     }
+
+    /** 
+     * @test
+     */
+    public function client_instance_is_macroable()
+    {
+        $intercom = $this->app->make(Client::class);
+
+        $intercom->macro('fooUsers', function() use ($intercom) {
+            return $intercom->users;
+        });
+
+        $this->assertTrue($intercom->hasMacro('fooUsers'));
+        $this->assertInstanceOf(\Intercom\IntercomUsers::class, $intercom->fooUsers());
+    }
+
+    /** 
+     * @test
+     */
+    public function client_facade_is_macroable()
+    {
+        \Intercom::macro('barUsers', function() {
+            return \Intercom::users();
+        });
+
+        $this->assertTrue(\Intercom::hasMacro('barUsers'));
+        $this->assertInstanceOf(\Intercom\IntercomUsers::class, \Intercom::barUsers());
+    }
 }

@@ -2,10 +2,13 @@
 
 namespace Mediumart\Intercom;
 
+use Illuminate\Support\Traits\Macroable;
 use Intercom\IntercomClient as BaseClient;
 
 class IntercomClient extends BaseClient
 {
+    use Macroable;
+
     /**
      * Notes.
      * 

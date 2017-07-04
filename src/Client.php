@@ -31,10 +31,8 @@ class Client
      */
     public function __get($property)
     {        
-        if( property_exists($this->intercomClient, $property) &&
-            (new \ReflectionProperty(
-                get_class($this->intercomClient), $property
-            ))->isPublic() ) {
+        if (property_exists($this->intercomClient, $property) &&
+            (new \ReflectionProperty(get_class($this->intercomClient), $property))->isPublic() ) {
             return $this->intercomClient->{$property};
         }
 
@@ -52,18 +50,14 @@ class Client
      */
     public function __call($method, $parameters)
     {
-        if( method_exists($this->intercomClient, $method) && 
-            (new \ReflectionMethod(
-                $this->intercomClient, $method
-            ))->isPublic() ) {
-            return call_user_func_array(
-                array($this->intercomClient, $method), $parameters
-            );
+        if ((method_exists($this->intercomClient, $method) && 
+            (new \ReflectionMethod($this->intercomClient, $method))->isPublic()) 
+            || IntercomClient::hasMacro($method)) {
+            return call_user_func_array(array($this->intercomClient, $method), $parameters);
         }
 
         return self::__get($method);
     }
-
 
     /**
      * Sets GuzzleHttp client.
