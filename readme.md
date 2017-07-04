@@ -89,6 +89,7 @@ Here is the list of all the Intercom resources types :
  - `messages`
  - `conversations`
  - `leads`
+ - `visitors`
  - `admins`
  - `tags`
  - `segments`

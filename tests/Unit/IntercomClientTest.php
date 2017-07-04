@@ -17,6 +17,7 @@ class IntercomClientTest extends TestCase
           ['messages'],
           ['conversations'],
           ['leads'],
+          ['visitors'],
           ['admins'],
           ['tags'],
           ['segments'],

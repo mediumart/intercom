@@ -14,6 +14,13 @@ class IntercomClient extends BaseClient
     public $notes;
 
     /**
+     * Visitors.
+     * 
+     * @var \Intercom\IntercomVisitors
+     */
+    public $visitors;
+
+    /**
      * Get the client acces token.
      * 
      * @return string 
