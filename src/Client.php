@@ -31,8 +31,7 @@ class Client
      */
     public function __get($property)
     {        
-        if (property_exists($this->intercomClient, $property) &&
-            (new \ReflectionProperty(get_class($this->intercomClient), $property))->isPublic()) {
+        if ($this->isClientPublicAttribute($property)) {
             return $this->intercomClient->{$property};
         }
 
@@ -50,13 +49,11 @@ class Client
      */
     public function __call($method, $parameters)
     {
-        if ((method_exists($this->intercomClient, $method) && 
-            (new \ReflectionMethod($this->intercomClient, $method))->isPublic()) 
-            || IntercomClient::hasMacro($method)) {
+        if ($this->isClientPublicMethod($method) || IntercomClient::hasMacro($method)) {
             return call_user_func_array(array($this->intercomClient, $method), $parameters);
         }
 
-        return self::__get($method);
+        return static::__get($method);
     }
 
     /**
@@ -83,5 +80,31 @@ class Client
         $this->intercomClient->setToken($token);
 
         return $this;
+    }
+
+    /**
+     * Check method is part of the public client api.
+     * 
+     * @param  string  $method
+     * @return boolean
+     */
+    protected function isClientPublicMethod($method)
+    {
+        return method_exists($this->intercomClient, $method) 
+                    && (new \ReflectionMethod($this->intercomClient, $method))
+                            ->isPublic();
+    }
+
+    /**
+     * Check property is part of the public client api.
+     *   
+     * @param  string  $property
+     * @return boolean
+     */
+    protected function isClientPublicAttribute($property)
+    {
+        return property_exists($this->intercomClient, $property) 
+                    && (new \ReflectionProperty(get_class($this->intercomClient), $property))
+                            ->isPublic();
     }
 }
