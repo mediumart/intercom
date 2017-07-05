@@ -22,7 +22,7 @@ class IntercomServiceProvider extends ServiceProvider
     {
         $this->app->singleton('intercom', function ($app) {
             return new Client( 
-                new IntercomClient( config('services.intercom.access_token'), null ) 
+                new IntercomClient(config('services.intercom.access_token'), null) 
             );
         });
 

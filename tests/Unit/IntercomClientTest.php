@@ -2,9 +2,9 @@
 
 namespace Tests\Unit;
 
-use Mediumart\Intercom\IntercomClient;
-use Mediumart\Intercom\Client;
 use Tests\TestCase;
+use Mediumart\Intercom\Client;
+use Mediumart\Intercom\IntercomClient;
 
 class IntercomClientTest extends TestCase
 {
@@ -76,7 +76,7 @@ class IntercomClientTest extends TestCase
     {
         $intercom = $this->app->make(Client::class);
 
-        $this->assertNotNull( call_user_func([$intercom, $resource]) );
+        $this->assertNotNull(call_user_func([$intercom, $resource]));
     }
 
     /**
@@ -100,7 +100,7 @@ class IntercomClientTest extends TestCase
 
         (in_array($method, ['setClient', 'setToken']))
             ? $this->assertInstanceOf($returnValue, call_user_func_array([$intercom, $method], $parameters))
-            : $this->assertEquals($returnValue, call_user_func_array([$intercom, $method], $parameters) );
+            : $this->assertEquals($returnValue, call_user_func_array([$intercom, $method], $parameters));
     }
 
     /** 

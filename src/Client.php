@@ -32,7 +32,7 @@ class Client
     public function __get($property)
     {        
         if (property_exists($this->intercomClient, $property) &&
-            (new \ReflectionProperty(get_class($this->intercomClient), $property))->isPublic() ) {
+            (new \ReflectionProperty(get_class($this->intercomClient), $property))->isPublic()) {
             return $this->intercomClient->{$property};
         }
 
