@@ -11,7 +11,8 @@
         }
     ],
     "require": {
-        "intercom/intercom-php": "^3.1"
+        "intercom/intercom-php": "^3.1",
+        "illuminate/support": "~5.0"
     },
     "require-dev": {
         "mockery/mockery": "0.9.*",
