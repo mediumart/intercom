@@ -1,6 +1,6 @@
 {
     "name": "mediumart/intercom",
-    "description": "Intercom API client adapter for laravel",
+    "description": "Intercom API [Macroable] client adapter for laravel",
     "type": "library",
     "license": "MIT",
     "keywords": ["laravel", "intercom", "intercom.io"],

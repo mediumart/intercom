@@ -5,6 +5,8 @@
 [![License](https://poser.pugx.org/mediumart/intercom/license)](https://packagist.org/packages/mediumart/intercom)
 [![Total Downloads](https://poser.pugx.org/mediumart/intercom/downloads)](https://packagist.org/packages/mediumart/intercom)
 
+> :grey_exclamation: Laravel Intercom Client is now macroable !
+
 ## Installation
 
 To install, first require the package via composer:
@@ -105,6 +107,32 @@ In addition, you can also set the token in a fluent way, after the `Client` has 
     $intercom->setToken($token)->users->getUser($id);
 
  
+## Defining Macros
+
+To create a macro function, you can use the `macro` method on either the `facade` or the `instance`, this function accepts a `name` as its first argument, and a `callable` as its second.
+
+```php
+// facade
+Intercom::macro('usersEmails', function () {
+   return // your logic here ... 
+});
+
+// instance
+$intercom->macro('usersEmails', function () use ($intercom) {
+   return // your logic here ... 
+});
+```
+
+Your `macro` can now be call as a regular method on intercom facade or instance
+
+```php
+// facade
+$userEmails = Intercom::usersEmails();
+
+// instance
+$userEmails = $intercom->usersEmails();
+```
+
 ## License
 
 Mediumart Intercom is an open-sourced software licensed under the [MIT license](https://github.com/mediumart/intercom/blob/master/LICENSE.txt).
