@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Unit;
+namespace Mediumart\Intercom\Tests\Unit;
 
-use Tests\TestCase;
 use Mediumart\Intercom\Client;
 use Mediumart\Intercom\IntercomClient;
+use Mediumart\Intercom\Tests\TestCase;
 
 class IntercomClientTest extends TestCase
 {

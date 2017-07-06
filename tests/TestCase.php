@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests;
+namespace Mediumart\Intercom\Tests;
 
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 
