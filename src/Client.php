@@ -83,7 +83,7 @@ class Client
     }
 
     /**
-     * Check method is part of the public client api.
+     * Check method is part of the client public api.
      * 
      * @param  string  $method
      * @return boolean
@@ -96,7 +96,7 @@ class Client
     }
 
     /**
-     * Check property is part of the public client api.
+     * Check property is part of the client public api.
      *   
      * @param  string  $property
      * @return boolean
