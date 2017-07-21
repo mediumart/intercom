@@ -71,7 +71,7 @@ public function index(Client $intercom)
 $intercomUsers = Intercom::users();
 ```
 
-Using the `intance` or the `facade`, any resource type is mirrored as a method on the `Client`, that can be used to gain the corresponding resource object :
+Using the `instance` or the `facade`, any resource type is mirrored as a method on the `Client`, that can be used to gain the corresponding resource object :
 ```php
 // facade
 $leads = Intercom::leads();
@@ -80,7 +80,7 @@ $leads = Intercom::leads();
 $intercom = app('intercom');
 $conversations = $intercom->conversations();
 ```
-Using the `intance` approach you can also resolve the resource instance as a property of the `Client`:
+Using the `instance` approach you can also resolve the resource instance as a property of the `Client`:
 ```php
 $conversations = $intercom->conversations;
 ```
