@@ -1,6 +1,7 @@
 # Mediumart Intercom
 
 [![Build Status](https://travis-ci.org/mediumart/intercom.svg?branch=master)](https://travis-ci.org/mediumart/intercom)
+[![Coverage Status](https://coveralls.io/repos/github/mediumart/intercom/badge.svg)](https://coveralls.io/github/mediumart/intercom)
 [![Latest Stable Version](https://poser.pugx.org/mediumart/intercom/v/stable)](https://packagist.org/packages/mediumart/intercom)
 [![License](https://poser.pugx.org/mediumart/intercom/license)](https://packagist.org/packages/mediumart/intercom)
 [![Total Downloads](https://poser.pugx.org/mediumart/intercom/downloads)](https://packagist.org/packages/mediumart/intercom)
