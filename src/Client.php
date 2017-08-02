@@ -53,7 +53,7 @@ class Client
             return call_user_func_array(array($this->intercomClient, $method), $parameters);
         }
 
-        return static::__get($method);
+        return self::__get($method);
     }
 
     /**
