@@ -124,7 +124,7 @@ $intercom->macro('usersEmails', function () use ($intercom) {
 });
 ```
 
-Your `macro` can now be call as a regular method on intercom facade or instance
+Your `macro` can now be called as a regular method on intercom facade or instance
 
 ```php
 // facade
