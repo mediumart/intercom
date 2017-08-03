@@ -49,7 +49,7 @@ class Client
      */
     public function __call($method, $parameters)
     {
-        if ($this->isClientPublicMethod($method) || IntercomClient::hasMacro($method)) {
+        if ($this->isClientPublicMethod($method) || $this->clientHasMacro($method)) {
             return call_user_func_array(array($this->intercomClient, $method), $parameters);
         }
 
@@ -106,5 +106,16 @@ class Client
         return property_exists($this->intercomClient, $property) 
                     && (new \ReflectionProperty(get_class($this->intercomClient), $property))
                             ->isPublic();
+    }
+
+    /**
+     * Determine if a client macro is defined.
+     * 
+     * @param  string $method
+     * @return bool
+     */
+    protected function clientHasMacro($method)
+    {
+        return IntercomClient::hasMacro($method);
     }
 }
