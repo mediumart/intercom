@@ -110,7 +110,7 @@ In addition, you can also set the token in a fluent way, after the `Client` has 
  
 ## Defining Macros
 
-To create a macro function, you can use the `macro` method on either the `facade` or the `instance`, this function accepts a `name` as its first argument, and a `callable` as its second.
+To create a macro function, you can use the `macro` method on either the `facade` or the `instance`, this method accepts a `name` as its first argument, and a `callable` as its second.
 
 ```php
 // facade
