@@ -101,7 +101,7 @@ Here is the list of all the Intercom resources types :
  - `bulk`
  - `notes`
  
-You can find related informations on their [official documentation page](https://developers.intercom.com/v2.0/reference#api-summary) and the api usage for each resource [here](https://github.com/intercom/intercom-php/blob/master/README.md#users).
+You can find related informations on their [official documentation page](https://developers.intercom.com/intercom-api-reference/reference#users) and the api usage for each resource [here](https://github.com/intercom/intercom-php/blob/master/README.md#users).
 
 In addition, you can also set the token in a fluent way, after the `Client` has been resolved, using the `setToken` method:
 
