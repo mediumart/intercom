@@ -30,7 +30,7 @@ and the facade reference inside the `'aliases'` array:
 
 ## Configuration
 
-You need to create an `app` with an associated `access_token` from your [intercom.io](https://app.intercom.io/admins/sign_in) account. You can find informations on how to do that [here](https://developers.intercom.com/docs/personal-access-tokens).
+You need to create an `app` with an associated `access_token` from your [intercom.io](https://app.intercom.io/admins/sign_in) account. You can find informations on how to do that [here](https://developers.intercom.com/building-apps/docs/authorization).
 
 Once you got your access token, open the `config/services.php` in your laravel project and add a key for the `intercom` service like this:
 
