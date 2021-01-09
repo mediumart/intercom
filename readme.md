@@ -6,7 +6,7 @@
 [![License](https://poser.pugx.org/mediumart/intercom/license)](https://packagist.org/packages/mediumart/intercom)
 [![Total Downloads](https://poser.pugx.org/mediumart/intercom/downloads)](https://packagist.org/packages/mediumart/intercom)
 
-> Mediumart Intercom Client is now macroable !
+> Mediumart Intercom Client is macroable !
 
 ## Installation
 
