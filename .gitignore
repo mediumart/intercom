@@ -3,3 +3,6 @@ vendor/
 phpunit.xml
 clover.xml
 coveralls-upload.json
+/.history
+/.vscode
+.phpunit.result.cache

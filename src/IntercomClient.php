@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Mediumart\Intercom;
 
@@ -11,22 +11,22 @@ class IntercomClient extends BaseClient
 
     /**
      * Notes.
-     * 
+     *
      * @var \Intercom\IntercomNotes
      */
     public $notes;
 
     /**
      * Visitors.
-     * 
+     *
      * @var \Intercom\IntercomVisitors
      */
     public $visitors;
 
     /**
      * Get the client acces token.
-     * 
-     * @return string 
+     *
+     * @return string
      */
     public function getToken()
     {
@@ -35,7 +35,7 @@ class IntercomClient extends BaseClient
 
     /**
      * Set the client access token.
-     * 
+     *
      * @param string $token
      */
     public function setToken($token)

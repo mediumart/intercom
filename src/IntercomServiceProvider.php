@@ -2,17 +2,11 @@
 
 namespace Mediumart\Intercom;
 
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Support\ServiceProvider;
 
-class IntercomServiceProvider extends ServiceProvider
+class IntercomServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
     /**
      * Register the application services.
      *
@@ -21,12 +15,12 @@ class IntercomServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton('intercom', function ($app) {
-            return new Client( 
-                new IntercomClient(config('services.intercom.access_token'), null) 
+            return new Client(
+                new IntercomClient(config('services.intercom.access_token'), null)
             );
         });
 
-        $this->app->bind(Client::class, function($app) {
+        $this->app->bind(Client::class, function ($app) {
             return $app->make('intercom');
         });
     }

@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Mediumart\Intercom;
 
@@ -6,14 +6,14 @@ class Client
 {
     /**
      * Api client.
-     * 
+     *
      * @var \Mediumart\Intercom\IntercomClient;
      */
     protected $intercomClient;
 
     /**
      * Contstrucor.
-     * 
+     *
      * @param IntercomClient $intercomClient
      */
     public function __construct(IntercomClient $intercomClient)
@@ -23,14 +23,14 @@ class Client
 
     /**
      * Exposed intercom Api resources.
-     * 
-     * @param  string $property 
+     *
+     * @param  string $property
      * @return mixed
-     * 
+     *
      * @throws \Exception
      */
     public function __get($property)
-    {        
+    {
         if ($this->isClientPublicAttribute($property)) {
             return $this->intercomClient->{$property};
         }
@@ -40,7 +40,7 @@ class Client
 
     /**
      * Exposed intercomClient api.
-     * 
+     *
      * @param  string $method
      * @param  array $parameters
      * @return mixed
@@ -53,7 +53,7 @@ class Client
             return call_user_func_array(array($this->intercomClient, $method), $parameters);
         }
 
-        return self::__get($method);
+        return $this->__get($method);
     }
 
     /**
@@ -84,33 +84,33 @@ class Client
 
     /**
      * Check method is part of the client public api.
-     * 
+     *
      * @param  string  $method
      * @return boolean
      */
     protected function isClientPublicMethod($method)
     {
-        return method_exists($this->intercomClient, $method) 
-                    && (new \ReflectionMethod($this->intercomClient, $method))
-                            ->isPublic();
+        return method_exists($this->intercomClient, $method)
+            && (new \ReflectionMethod($this->intercomClient, $method))
+            ->isPublic();
     }
 
     /**
      * Check property is part of the client public api.
-     *   
+     *
      * @param  string  $property
      * @return boolean
      */
     protected function isClientPublicAttribute($property)
     {
-        return property_exists($this->intercomClient, $property) 
-                    && (new \ReflectionProperty(get_class($this->intercomClient), $property))
-                            ->isPublic();
+        return property_exists($this->intercomClient, $property)
+            && (new \ReflectionProperty(get_class($this->intercomClient), $property))
+            ->isPublic();
     }
 
     /**
      * Determine if a client macro is defined.
-     * 
+     *
      * @param  string $method
      * @return bool
      */
