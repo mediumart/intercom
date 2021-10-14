@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Mediumart\Intercom;
 
@@ -11,5 +11,8 @@ class Intercom extends Facade
      *
      * @return string
      */
-    protected static function getFacadeAccessor() { return 'intercom'; }
+    protected static function getFacadeAccessor()
+    {
+        return 'intercom';
+    }
 }
